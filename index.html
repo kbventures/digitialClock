@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .clock {
+      position: relative;
+      margin: 200px auto;
+      border: 1rem black solid;
+      width: 500px;
+      height: 500px;
+      border-radius: 100%;
+    }
+    .hand {
+      position: absolute;
+      width: 5px;
+      height: 50%;
+      left: 50%;
+      background-color: black;
+      transform-origin: 0 100%;
+    }
+
+    .second-hand {
+      animation: rotate 60s linear infinite;
+    }
+    .minute-hand {
+      animation: rotate 3600s linear infinite;
+    }
+    .hour-hand {
+      animation: rotate 216000s linear infinite;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <div class="hand second-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand hour-hand"></div>
+      </div>
+    </div>
+  </body>
+</html>

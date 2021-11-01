@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      background-color: black;
+      font-family: 'Orbitron', sans-serif;
+      color: cornflowerblue;
+      font-size: 3rem;
+    }
+
+    .container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body .onLoad="clockFunction()">
+    <div class="container">
+      <div class="clock">Test</div>
+    </div>
+  </body>
+  <script>
+    console.log('Test');
+
+    let hour;
+    let minute;
+    let second;
+    let am_vs_pm = 'AM';
+
+    let container = document.querySelector('.container');
+    let clock = document.querySelector('.clock');
+
+    function clockFunction() {
+      let now = new Date();
+      console.log(now);
+      console.log(now.getSeconds());
+      console.log(now.getMinutes());
+      console.log(now.getHours());
+
+      console.log(
+        now.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+      );
+
+      hour = now.getHours();
+      minute = now.getMinutes();
+      second = now.getSeconds();
+      if (hour >= 12) {
+        am_vs_pm = 'PM';
+      }
+      clock.textContent = `${hour} : ${minute} : ${second} ${am_vs_pm}`;
+
+      setTimeout(() => {
+        clockFunction();
+      }, 1000);
+    }
+    clockFunction();
+  </script>
+</html>

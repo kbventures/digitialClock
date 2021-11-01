@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .wrap {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background: #000;
+      border-radius: 100%;
+      margin: 50px auto;
+    }
+    .box {
+      position: absolute;
+      width: 5px;
+      height: 50%;
+      background: #fff;
+      left: 50%;
+      transform-origin: 2.5px 100%;
+      animation: rotate 10s linear infinite;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
